@@ -1,0 +1,29 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimum-scale=1.0, maximum-scale=1.0,width=device-width">
+    <title>touchFeedback</title>
+    <style>
+        .touch {
+            height: 100px;
+            background: #699f00;
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;
+            color: #fff;
+        }
+        .touch.feedback {
+            background: #38f;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="wrapper"> -->
+        <div class="touch" data-touchFeedback="true">touch me</div>
+    </div>
+    <script src="../src/touchFeedback.js"></script>
+    <script>
+        new TouchFeedback('.wrapper');
+    </script>
+</body>
+</html>
