@@ -51,7 +51,7 @@ You should specify one or more element as a listener.These elements will be trig
 	var feedback = new TouchFeedback(selector, option);
 	feedback.destory();
 
-* destory: 销毁监控
+* destory: destory the listener
 
 ## Download
 
