@@ -2,7 +2,7 @@
 
 ![](http://0d077ef9e74d8.cdn.sohucs.com/pWc9ydG_gif)
 
-touchFeedback.js是用来解决h5在触摸反馈上的不足的一个JS库，一切逻辑都在2kb(gzip前)中实现。
+touchFeedback.js是用来解决h5在触摸反馈上的不足的一个JS库，一切逻辑都在2kb中实现。
 
 [一些有趣的反馈效果](http://www.dearhaoge.com/touchFeedback/demo/demo2.html)
 
@@ -16,16 +16,16 @@ touchFeedback.js是用来解决h5在触摸反馈上的不足的一个JS库，一
 
 ## 简介
 
-对于触摸反馈，使用最多的是active伪类方案和a标签包裹方案，两种方案在很多浏览器中都会存在和click事件一样的300ms延时。通过添加&移除class的方式则可以避免这种问题。
+对于触摸反馈，使用最多的是方案``active伪类``和``a标签包裹``，经过测试，两种方案都存在不少问题，最为明显的要数反馈延迟(和click在移动端的表现一样)。而通过添加&移除class的方式则可以避免这种问题，如果你忍受不了这个延迟，试试touchFeedback吧。
 
-[相关文章](http://note.youdao.com/noteshare?id=6acccc8bebfe14b33029d7905b9727db)
+[如何让h5体验接近APP（一）触摸反馈](http://note.youdao.com/noteshare?id=6acccc8bebfe14b33029d7905b9727db)
 
 ## 特点
 
 1. 支持所有移动端流行浏览器
 2. 反应灵敏, 没有300ms延迟
 3. 使用简单
-4. 体积小
+4. 体积小，仅2kb
 
 ## 快速上手
 
