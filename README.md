@@ -6,20 +6,20 @@ mobile browsers;All functions are realized only in 2kb;
 
 ## index
 
-* [Feature](#Feature)
-* [Quick Start](#Quick Start)
-* [API](#API)
-* [Download](#Download)
-* [Licenses](#Licenses)
+* [feature](#feature)
+* [quick-start](#quick-start)
+* [api](#api)
+* [download](#download)
+* [licenses](#licenses)
 
-## Feature
+## feature
 
 1. Supports all modern mobile browsers
 2. Eliminate the 300ms delay between a physical tap and the firing of a touch feedback on mobile browsers
 3. easy to use
 4. small size
 
-## Quick Start
+## quick-start
 
 ### Initialize the feedback listener
 
@@ -36,7 +36,7 @@ You should specify one or more element as a listener.These elements will be trig
 [demo]()
 
 
-## API
+## api
 
 ### Initialization
 
@@ -53,12 +53,12 @@ You should specify one or more element as a listener.These elements will be trig
 
 * destory: destory the listener
 
-## Download
+## download
 
 
 
 
-## Licenses
+## licenses
 
 Released under the MIT, BSD, and GPL Licenses
 
