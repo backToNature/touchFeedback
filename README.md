@@ -4,11 +4,11 @@ touchFeedback.js是用来解决h5在触摸反馈上的不足的一个JS库，一
 
 ## 目录
 
-* 特点
-* 快速上手
-* API
-* 下载
-* 授权协议
+* [特点](#特点)
+* [快速上手](#快速上手)
+* [API](#API)
+* [下载](#下载)
+* [授权协议](#授权协议)
 
 ## 特点
 
@@ -55,9 +55,10 @@ touchFeedback.js是用来解决h5在触摸反馈上的不足的一个JS库，一
 
 
 
+
 ## 授权协议
 
-
+Released under the MIT, BSD, and GPL Licenses
 
 
 	

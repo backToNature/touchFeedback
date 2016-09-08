@@ -1,0 +1,162 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimum-scale=1.0, maximum-scale=1.0,width=device-width">
+    <title>touchFeedback</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+        .wrapper {
+            padding: 0 10px;
+        }
+        .line div {
+            width: 46%;
+            height: 16vh;
+            background: #000;
+            margin: 10px 2%;
+            display: inline-block;
+            font-size: 22px;
+            color: #fff;
+            line-height: 16vh;
+            text-align: center;
+            font-weight: 900;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+            overflow: hidden;
+        }
+        .line:nth-child(odd) .left{
+            background: #f55;
+        }
+        .line:nth-child(odd) .right{
+            background: #7e57c2;
+        }
+        .line:nth-child(even) .left{
+            background: #ff9800;
+        }
+        .line:nth-child(even) .right{
+            background: #1489e6;
+        }
+
+        .line:nth-child(1) .left.feedback {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+
+        .line:nth-child(1) .right.feedback {
+            -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+        }
+
+        .line:nth-child(2) .left.feedback {
+            -webkit-transform: scale(1.1) rotate(4deg);
+            transform: scale(1.1) rotate(4deg);
+        }
+
+        .line:nth-child(2) .right.feedback {
+            -webkit-transform: skew(-10deg);
+            transform: skew(-10deg);
+        }
+
+        .line:nth-child(3) .left.feedback {
+            background-color: #009688;
+            color: #ccc;
+        }
+
+        .line:nth-child(3) .right:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #699f00;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transform-origin: 50%;
+            transform-origin: 50%;
+            -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+        }
+
+        .line:nth-child(3) .right.feedback:before {
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+
+        .line:nth-child(4) .left:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #699f00;
+            border-radius: 100%;
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+        }
+
+        .line:nth-child(4) .left.feedback:before {
+            -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+        }
+        
+        .line:nth-child(4) .right {
+            background: #e1e1e1;
+            color: #666;
+        }
+
+        .line:nth-child(4) .right:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-color: #2098d1;
+            border-style: solid;
+            border-width: 0;
+            -webkit-transition: all .1s ease-in-out;
+            transition: all .1s ease-in-out;
+        }
+
+        .line:nth-child(4) .right.feedback:before {
+            border-width: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>TouchFeedback.js</h1>
+    <div class="wrapper">
+        <div class="line">
+            <div class="left" data-touchFeedback="true">Grow</div><div class="right" data-touchFeedback="true">Shrink</div>
+        </div>
+        <div class="line">
+            <div class="left" data-touchFeedback="true">Grow Rotate</div><div class="right" data-touchFeedback="true">skew</div>
+        </div>
+        <div class="line">
+            <div class="left" data-touchFeedback="true">Fade</div><div class="right" data-touchFeedback="true">Shutter</div>
+        </div>
+        <div class="line">
+            <div class="left" data-touchFeedback="true">Radial Out</div><div class="right" data-touchFeedback="true">Reveal</div>
+        </div>
+    </div>
+    <script src="../src/touchFeedback.js"></script>
+    <script>
+        new TouchFeedback('.wrapper');
+    </script>
+</body>
+</html>
