@@ -1,8 +1,8 @@
-# touchFeedback.js - minimalist JavaScript library
+# touchFeedback.js - lightWeight JavaScript library
 
 ![](http://0d077ef9e74d8.cdn.sohucs.com/pWc9ydG_gif)
 
-touchFeedback.js is a library for touch feedback in 
+``touchFeedback.js`` is a library for touch feedback in 
 mobile browsers;All functions are realized only in 2kb;
 
 [中文说明](https://github.com/backToNature/touchFeedback/blob/master/doc/zh-cn.md)
