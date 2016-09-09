@@ -4,7 +4,7 @@
 
 touchFeedback.js是用来解决h5在触摸反馈上的不足的一个JS库，一切逻辑都在2kb(gzip前)中实现。
 
-[一些有趣的反馈效果](http://www.dearhaoge.com/touchFeedback/demo/demo2.html)
+[一些有趣的反馈效果](http://www.dearhaoge.com/touchFeedback/demo/cool-feedbacks.html)
 
 ## 目录
 
@@ -56,7 +56,7 @@ touchFeedback.js是用来解决h5在触摸反馈上的不足的一个JS库，一
 		new TouchFeedback('.wrapper'); // 仅对class为wrapper的元素及其子元素启用
 	</script>
 
-[演示](http://www.dearhaoge.com/touchFeedback/demo/demo1.html)
+[演示](http://www.dearhaoge.com/touchFeedback/demo/basic.html)
 
 ## API
 

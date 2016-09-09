@@ -1,3 +1,4 @@
+/*!touchFeedback - https://github.com/backToNature/touchFeedback/*/
 !(function () {
     var eventBind = function (container, bindProp, feedbackClass) {
         var eventData = {};

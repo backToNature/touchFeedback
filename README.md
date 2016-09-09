@@ -36,7 +36,7 @@ You should specify one or more element as a listener.These elements will be trig
 		new TouchFeedback('.wrapper'); // only listen this element and this element's children
 	</script>
 
-[demo](http://www.dearhaoge.com/touchFeedback/demo/demo1.html)
+[demo](http://www.dearhaoge.com/touchFeedback/demo/basic.html)
 
 
 ## api
