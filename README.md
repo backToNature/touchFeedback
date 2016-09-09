@@ -1,42 +1,42 @@
-# touchFeedback.js
+# touchFeedback.js - lightWeight JavaScript library
 
 ![](http://0d077ef9e74d8.cdn.sohucs.com/pWc9ydG_gif)
 
-touchFeedback.js是用来解决h5在触摸反馈上的不足的一个JS库，一切逻辑都在2kb中实现。
+``touchFeedback.js`` is a library for touch feedback in 
+mobile browsers;All functions are realized only in 2kb;
 
-[测试demo](http://www.dearhaoge.com/touchFeedback/demo/delay-test.html)
+[中文说明](https://github.com/backToNature/touchFeedback/blob/master/doc/zh-cn.md)
 
-[一些有趣的反馈效果](http://www.dearhaoge.com/touchFeedback/demo/cool-feedbacks.html)
+[test demo](http://www.dearhaoge.com/touchFeedback/demo/delay-test.html)
 
-## 目录
+[some feedbacks](http://www.dearhaoge.com/touchFeedback/demo/cool-feedbacks.html)
 
-* [简介](#简介)
-* [特点](#特点)
-* [快速上手](#快速上手)
-* [API](#api)
-* [授权协议](#授权协议)
+## index
 
-## 简介
+* [intro](#intro)
+* [feature](#feature)
+* [quick-start](#quick-start)
+* [api](#api)
+* [download](#download)
+* [licenses](#licenses)
 
-对于触摸反馈，使用最多的是方案``active伪类``和``a标签包裹``，经过测试，两种方案都存在不少问题，最为明显的要数反馈延迟(和click在移动端的表现一样)。而通过添加&移除class的方式则可以避免这种问题，如果你忍受不了这个延迟，试试touchFeedback吧。
+## intro
 
-[如何让h5体验接近APP（一）触摸反馈](http://note.youdao.com/noteshare?id=6acccc8bebfe14b33029d7905b9727db)
+For touch feedback,the most used way is ``active pseudo class`` and ``HTML Anchor Element (<a>)``.But after testing,both way has some problems.The most obvious problem is ``feedback delay``(just like click delay).You can avoid this problem by adding & removing `Class`.If you can't tolerate this delay, try ``touchFeedback``.
 
-## 特点
+## feature
 
-1. 支持所有移动端流行浏览器
-2. 反应灵敏, 没有300ms延迟
-3. 使用简单
-4. 体积小，仅2kb
+1. Supports all modern mobile browsers
+2. Eliminate the 300ms delay between a physical tap and the firing of a touch feedback on mobile browsers.
+3. easy to use
+4. small size
 
-## 快速上手
+## quick-start
 
-### 启用反馈监控
+### Initialize the feedback listener
 
-1. 指定一个父元素或者body作为监控范围。
-2. 给需要反馈的元素加上``data-touchFeedback="true"``
-3. 添加反馈样式，class名默认为feedback
-	
+You should specify one or more element as a listener.These elements will be trigger feedback if these have "data-touchFeedback" attribute.
+
 ```
 <style>
     .touch {
@@ -52,40 +52,44 @@ touchFeedback.js是用来解决h5在触摸反馈上的不足的一个JS库，一
     }
 </style>
 <div class="wrapper">
-    <div class="touch" data-touchFeedback="true">touch me</div> <!-- 此元素生效 -->
+    <div class="touch" data-touchFeedback="true">touch me</div> <!-- this element will trigger feedback -->
 </div>
 <script>
-	// new TouchFeedback('body'); 全局启用
-	new TouchFeedback('.wrapper'); // 仅对class为wrapper的元素及其子元素启用
+    // new TouchFeedback('body'); global listener
+    new TouchFeedback('.wrapper'); // only listen this element and this element's children
 </script>
 ```
 
-[演示](http://www.dearhaoge.com/touchFeedback/demo/basic.html)
-
-## API
-
-### 初始化
-
-	new TouchFeedback(selector, option);
-
-### 参数
-
-* feedbackClass {String}: 指定触发反馈时添加&删除的className
-
-### 方法
-
-	var feedback = new TouchFeedback(selector, option);
-	feedback.destory();
-
-* destory: 销毁监控
+[demo](http://www.dearhaoge.com/touchFeedback/demo/basic.html)
 
 
-## 授权协议
+## api
+
+### Initialization
+
+    new TouchFeedback(selector, option);
+
+### option
+
+* feedbackClass {String}: Define the class that needs to be added or removed when the feedback is triggered.
+
+### method
+
+    var feedback = new TouchFeedback(selector, option);
+    feedback.destory();
+
+* destory: destory the listener
+
+## download
+
+[source](http://www.dearhaoge.com/touchFeedback/src/touchFeedback.js)
+
+## licenses
 
 Released under the MIT, BSD, and GPL Licenses
 
 
-	
+    
 
 
 

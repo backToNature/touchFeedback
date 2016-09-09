@@ -4,6 +4,8 @@
 
 touchFeedback.js是用来解决h5在触摸反馈上的不足的一个JS库，一切逻辑都在2kb中实现。
 
+[测试demo](http://www.dearhaoge.com/touchFeedback/demo/delay-test.html)
+
 [一些有趣的反馈效果](http://www.dearhaoge.com/touchFeedback/demo/cool-feedbacks.html)
 
 ## 目录
@@ -11,7 +13,7 @@ touchFeedback.js是用来解决h5在触摸反馈上的不足的一个JS库，一
 * [简介](#简介)
 * [特点](#特点)
 * [快速上手](#快速上手)
-* [API](#API)
+* [API](#api)
 * [授权协议](#授权协议)
 
 ## 简介
@@ -34,27 +36,29 @@ touchFeedback.js是用来解决h5在触摸反馈上的不足的一个JS库，一
 1. 指定一个父元素或者body作为监控范围。
 2. 给需要反馈的元素加上``data-touchFeedback="true"``
 3. 添加反馈样式，class名默认为feedback
-	
-	<style>
-        .touch {
-            height: 100px;
-            background: #699f00;
-            text-align: center;
-            line-height: 100px;
-            font-size: 30px;
-            color: #fff;
-        }
-        .touch.feedback {
-            background: #38f;
-        }
-    </style>
-	<div class="wrapper">
-        <div class="touch" data-touchFeedback="true">touch me</div> <!-- 此元素生效 -->
-    </div>
-	<script>
-		// new TouchFeedback('body'); 全局启用
-		new TouchFeedback('.wrapper'); // 仅对class为wrapper的元素及其子元素启用
-	</script>
+    
+```
+<style>
+    .touch {
+        height: 100px;
+        background: #699f00;
+        text-align: center;
+        line-height: 100px;
+        font-size: 30px;
+        color: #fff;
+    }
+    .touch.feedback {
+        background: #38f;
+    }
+</style>
+<div class="wrapper">
+    <div class="touch" data-touchFeedback="true">touch me</div> <!-- 此元素生效 -->
+</div>
+<script>
+    // new TouchFeedback('body'); 全局启用
+    new TouchFeedback('.wrapper'); // 仅对class为wrapper的元素及其子元素启用
+</script>
+```
 
 [演示](http://www.dearhaoge.com/touchFeedback/demo/basic.html)
 
@@ -62,7 +66,7 @@ touchFeedback.js是用来解决h5在触摸反馈上的不足的一个JS库，一
 
 ### 初始化
 
-	new TouchFeedback(selector, option);
+    new TouchFeedback(selector, option);
 
 ### 参数
 
@@ -70,8 +74,8 @@ touchFeedback.js是用来解决h5在触摸反馈上的不足的一个JS库，一
 
 ### 方法
 
-	var feedback = new TouchFeedback(selector, option);
-	feedback.destory();
+    var feedback = new TouchFeedback(selector, option);
+    feedback.destory();
 
 * destory: 销毁监控
 
@@ -81,7 +85,7 @@ touchFeedback.js是用来解决h5在触摸反馈上的不足的一个JS库，一
 Released under the MIT, BSD, and GPL Licenses
 
 
-	
+    
 
 
 
