@@ -4,6 +4,8 @@
 
 touchFeedback.js是用来解决h5在触摸反馈上的不足的一个JS库，一切逻辑都在2kb中实现。
 
+[测试demo](http://www.dearhaoge.com/touchFeedback/demo/delay-test.html)
+
 [一些有趣的反馈效果](http://www.dearhaoge.com/touchFeedback/demo/cool-feedbacks.html)
 
 ## 目录

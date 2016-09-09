@@ -76,7 +76,7 @@
 </head>
 <body>
     <div class="activeTouch">
-        <div class="banner">:active with binding touchstart</div>
+        <div class="banner">:active with hack(300ms delay)</div>
         <div class="container pseudo">
             <div class="item highlight">highlight</div>
             <div class="item animation">animation</div>
@@ -88,15 +88,12 @@
         </div>
     </div>
     <div class="disableTouch">
-        <div class="banner">:active without binding touchstart</div>
+        <div class="banner">:active without hack(iOS disabled)</div>
         <div class="container disabled">
             <div class="item touch normal">highlight</div>
             <div class="item touch anim">animation</div>
         </div>
     </div>
-    
-    <div class="banner">note</div>
-    <h3>安卓手机可以很明显地感觉使用active伪类会有延时</h3>
     <script src="../src/touchFeedback.js"></script>
     <script>
         new TouchFeedback('.add', {
