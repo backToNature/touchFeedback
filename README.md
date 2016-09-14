@@ -17,6 +17,7 @@ mobile browsers;All functions are realized only in 2kb;
 * [feature](#feature)
 * [quick-start](#quick-start)
 * [api](#api)
+* [changeLog](#changeLog)
 * [download](#download)
 * [licenses](#licenses)
 
@@ -73,12 +74,20 @@ You should specify one or more element as a listener.These elements will be trig
 
 * feedbackClass {String}: Define the class that needs to be added or removed when the feedback is triggered.
 
+
+
 ### method
 
     var feedback = new TouchFeedback(selector, option);
     feedback.destory();
 
 * destory: destory the listener
+
+## changeLog
+
+### v1.0.0
+
+1. fixed bug: If ``bindprop`` element have any children , addClass will disabled.
 
 ## download
 
