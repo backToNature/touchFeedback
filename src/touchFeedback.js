@@ -21,6 +21,15 @@
                     }
                     elem.className = newClass.replace(/^\s+|\s+$/g, '');
                 }
+            },
+            closest: function (elem, attribute) {
+                var cur, match;
+                for (cur = elem; cur; cur = cur.parentNode) {
+                    if (cur.nodeType < 11 && cur.nodeType === 1 && cur.getAttribute(attribute) === 'true') {
+                        break;
+                    }
+                }
+                return cur;
             }
         };
 
@@ -28,30 +37,25 @@
             eventData.event = e.changedTouches ? e.changedTouches[0] : e;
             eventData.startY = eventData.event.pageY;
             eventData.startX = eventData.event.pageX;
-            if (e.target.getAttribute(bindProp) === 'true') {
-                classUtil.addClass(e.target, feedbackClass);
+            eventData.target = classUtil.closest(e.target, bindProp);
+            if (eventData.target) {
+                classUtil.addClass(eventData.target, feedbackClass);
             }
         });
 
         container.addEventListener('touchmove', function (e) {
             eventData.event = e.changedTouches ? e.changedTouches[0] : e;
-            if ((eventData.event.pageY !== eventData.startY || eventData.event.pageX !== eventData.startX) && e.target.getAttribute(bindProp) === 'true') {
-                classUtil.removeClass(e.target, feedbackClass);
+            if ((eventData.event.pageY !== eventData.startY || eventData.event.pageX !== eventData.startX)) {
+                classUtil.removeClass(eventData.target, feedbackClass);
             }
         });
 
         container.addEventListener('touchcancel', function (e) {
-            eventData.event = e.changedTouches ? e.changedTouches[0] : e;
-            if (e.target.getAttribute(bindProp) === 'true') {
-                classUtil.removeClass(e.target, feedbackClass);
-            }
+            classUtil.removeClass(eventData.target, feedbackClass);
         });
 
         container.addEventListener('touchend', function (e) {
-            eventData.event = e.changedTouches ? e.changedTouches[0] : e;
-            if (e.target.getAttribute(bindProp) === 'true') {
-                classUtil.removeClass(e.target, feedbackClass);
-            }
+            classUtil.removeClass(eventData.target, feedbackClass);
         });
     };
     var TouchFeedback = function (selector, option) {
