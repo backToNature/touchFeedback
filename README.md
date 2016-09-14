@@ -17,7 +17,7 @@ mobile browsers;All functions are realized only in 2kb;
 * [feature](#feature)
 * [quick-start](#quick-start)
 * [api](#api)
-* [changeLog](#changeLog)
+* [changeLog](#changelog)
 * [download](#download)
 * [licenses](#licenses)
 
