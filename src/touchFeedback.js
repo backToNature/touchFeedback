@@ -1,7 +1,9 @@
 /*!touchFeedback - https://github.com/backToNature/touchFeedback/*/
 !(function () {
-    var eventBind = function (container, bindProp, feedbackClass) {
-        var eventData = {};
+    var eventBind = function (_this) {
+        var eventData = {}, container = _this._container,
+            bindProp = _this._bindProp, feedbackClass = _this._feedbackClass;
+
         var classUtil = {
             hasClass: function (elem, cls){
                 cls = cls || '';
@@ -33,7 +35,7 @@
             }
         };
 
-        container.addEventListener('touchstart', function (e) {
+        _this.startFunc = function (e) {
             eventData.event = e.changedTouches ? e.changedTouches[0] : e;
             eventData.startY = eventData.event.pageY;
             eventData.startX = eventData.event.pageX;
@@ -41,36 +43,42 @@
             if (eventData.target) {
                 classUtil.addClass(eventData.target, feedbackClass);
             }
-        });
+        };
 
-        container.addEventListener('touchmove', function (e) {
+        container.addEventListener('touchstart', _this.startFunc);
+
+        _this.moveFunc = function (e) {
             eventData.event = e.changedTouches ? e.changedTouches[0] : e;
             if ((eventData.event.pageY !== eventData.startY || eventData.event.pageX !== eventData.startX)) {
                 classUtil.removeClass(eventData.target, feedbackClass);
             }
-        });
+        };
 
-        container.addEventListener('touchcancel', function (e) {
-            classUtil.removeClass(eventData.target, feedbackClass);
-        });
+        container.addEventListener('touchmove', _this.moveFunc);
 
-        container.addEventListener('touchend', function (e) {
+        _this.cancelFunc = function (e) {
             classUtil.removeClass(eventData.target, feedbackClass);
-        });
+        };
+
+        container.addEventListener('touchcancel', _this.cancelFunc);
+
+        container.addEventListener('touchend', _this.cancelFunc);
     };
+
     var TouchFeedback = function (selector, option) {
         this._container = document.querySelector(selector);
         option = option || {};
         this._bindProp = option.bindProp || 'data-touchFeedback';
         this._feedbackClass = option.feedbackClass || 'feedback';
-        eventBind(this._container, this._bindProp, this._feedbackClass);
+        eventBind(this);
     };
+
     TouchFeedback.prototype.destory = function () {
         var _this = this;
-        _this._container.removeEventListener('touchstart');
-        _this._container.removeEventListener('touchmove');
-        _this._container.removeEventListener('touchcancel');
-        _this._container.removeEventListener('touchend');
+        _this._container.removeEventListener('touchstart', _this.startFunc);
+        _this._container.removeEventListener('touchmove', _this.moveFunc);
+        _this._container.removeEventListener('touchcancel', _this.cancelFunc);
+        _this._container.removeEventListener('touchend', _this.cancelFunc);
     };
 
     if (typeof define === 'function') {
