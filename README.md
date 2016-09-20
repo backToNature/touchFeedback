@@ -89,6 +89,11 @@ You should specify one or more element as a listener.These elements will be trig
 
 1. fixed bug: If ``bindprop`` element have any children , addClass will disabled.
 
+### v1.0.1
+
+1. fixed bug: ``destory`` unuseful.
+
+
 ## download
 
 [source](http://www.dearhaoge.com/touchFeedback/src/touchFeedback.js)

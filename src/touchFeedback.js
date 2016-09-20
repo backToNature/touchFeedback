@@ -49,7 +49,7 @@
 
         _this.moveFunc = function (e) {
             eventData.event = e.changedTouches ? e.changedTouches[0] : e;
-            if ((eventData.event.pageY !== eventData.startY || eventData.event.pageX !== eventData.startX)) {
+            if (eventData.target && (eventData.event.pageY !== eventData.startY || eventData.event.pageX !== eventData.startX)) {
                 classUtil.removeClass(eventData.target, feedbackClass);
             }
         };
@@ -57,7 +57,9 @@
         container.addEventListener('touchmove', _this.moveFunc);
 
         _this.cancelFunc = function (e) {
-            classUtil.removeClass(eventData.target, feedbackClass);
+            if (eventData.target) {
+                classUtil.removeClass(eventData.target, feedbackClass);
+            }
         };
 
         container.addEventListener('touchcancel', _this.cancelFunc);

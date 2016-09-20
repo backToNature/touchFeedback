@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimum-scale=1.0, maximum-scale=1.0,width=device-width">
+    <title>touchFeedback</title>
+    <style>
+        .wrapper {
+            padding: 30px;
+            border: 1px solid #999;
+            background: #ccc;
+        }
+        .touch {
+            height: 100px;
+            background: #699f00;
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;
+            margin-top: 5px;
+            color: #fff;
+            -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+        }
+        .touch.feedback {
+            background: #38f;
+            -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="touch" data-touchFeedback="true">A</div>
+        <div class="touch" data-touchFeedback="true">B</div>
+    </div>
+    <script src="../src/touchFeedback.js"></script>
+    <script>
+        new TouchFeedback('.wrapper');
+    </script>
+</body>
+</html>
