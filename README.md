@@ -93,6 +93,10 @@ You should specify one or more element as a listener.These elements will be trig
 
 1. fixed bug: ``destory`` unuseful.
 
+### v1.0.2
+
+1. fixed bug: Touch the wrapper's area will report errors.
+
 
 ## download
 
