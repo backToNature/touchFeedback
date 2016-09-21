@@ -97,6 +97,10 @@ You should specify one or more element as a listener.These elements will be trig
 
 1. fixed bug: Touch the wrapper's area will report errors.
 
+### v1.1.0
+
+1. add: Multi-touch has been supported.
+
 
 ## download
 

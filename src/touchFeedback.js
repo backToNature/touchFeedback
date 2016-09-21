@@ -1,7 +1,7 @@
 /*!touchFeedback - https://github.com/backToNature/touchFeedback/*/
 !(function () {
     var eventBind = function (_this) {
-        var eventData = {}, container = _this._container,
+        var eventData = {}, container = _this._container, vague = 5,
             bindProp = _this._bindProp, feedbackClass = _this._feedbackClass;
 
         var classUtil = {
@@ -36,30 +36,35 @@
         };
 
         _this.startFunc = function (e) {
-            eventData.event = e.changedTouches ? e.changedTouches[0] : e;
-            eventData.startY = eventData.event.pageY;
-            eventData.startX = eventData.event.pageX;
-            eventData.target = classUtil.closest(e.target, bindProp);
-            if (eventData.target) {
-                classUtil.addClass(eventData.target, feedbackClass);
+            var event = e.changedTouches ? e.changedTouches[0] : e,
+                identifier = eventData[event.identifier] = {};
+            identifier.startY = event.pageY;
+            identifier.startX = event.pageX;
+            identifier.target = classUtil.closest(event.target, bindProp);
+            if (identifier.target) {
+                classUtil.addClass(identifier.target, feedbackClass);
             }
         };
 
         container.addEventListener('touchstart', _this.startFunc);
 
         _this.moveFunc = function (e) {
-            eventData.event = e.changedTouches ? e.changedTouches[0] : e;
-            if (eventData.target && (eventData.event.pageY !== eventData.startY || eventData.event.pageX !== eventData.startX)) {
-                classUtil.removeClass(eventData.target, feedbackClass);
+            var event = e.changedTouches ? e.changedTouches[0] : e,
+                identifier = eventData[event.identifier];
+            if (event.target && Math.abs(identifier.startY - event.pageY) > vague) {
+                classUtil.removeClass(identifier.target, feedbackClass);
             }
         };
 
         container.addEventListener('touchmove', _this.moveFunc);
 
         _this.cancelFunc = function (e) {
-            if (eventData.target) {
-                classUtil.removeClass(eventData.target, feedbackClass);
+            var event = e.changedTouches ? e.changedTouches[0] : e,
+                identifier = eventData[event.identifier];
+            if (identifier.target) {
+                classUtil.removeClass(identifier.target, feedbackClass);
             }
+            delete eventData[event.identifier];
         };
 
         container.addEventListener('touchcancel', _this.cancelFunc);

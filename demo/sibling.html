@@ -17,8 +17,12 @@
             font-size: 30px;
             margin-top: 5px;
             color: #fff;
-            -webkit-transition: all .2s ease-in-out;
-            transition: all .2s ease-in-out;
+            /*-webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;*/
+            -webkit-user-select:none;
+            user-select:none;
+            -webkit-touch-callout: none;
+            touch-callout: none;
         }
         .touch.feedback {
             background: #38f;
@@ -31,10 +35,14 @@
     <div class="wrapper">
         <div class="touch" data-touchFeedback="true">A</div>
         <div class="touch" data-touchFeedback="true">B</div>
+        <div class="touch" data-touchFeedback="true">C</div>
+        <div class="touch" data-touchFeedback="true">D</div>
+
     </div>
     <script src="../src/touchFeedback.js"></script>
     <script>
         new TouchFeedback('.wrapper');
     </script>
+    <script src="http://10.0.69.182:8080/target/target-script-min.js#anonymous"></script>
 </body>
 </html>

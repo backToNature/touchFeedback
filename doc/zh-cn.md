@@ -97,6 +97,10 @@ touchFeedback.js是用来解决h5在触摸反馈上的不足的一个JS库，一
 
 1. 解决点击绑定区域里未指定``bindprop``元素会报错的问题
 
+#### v1.1.0
+
+1. 支持多点触控
+
 ## 授权协议
 
 Released under the MIT, BSD, and GPL Licenses
