@@ -48,8 +48,7 @@
     };
 
     TouchFeedback.prototype.destory = function () {
-        var _this = this;
-        _this.$container.off(_this._events);
+        this.$container.off(this._events);
     };
 
     $.fn.touchfeedback = function (el, option) {
