@@ -101,6 +101,15 @@ You should specify one or more element as a listener.These elements will be trig
 
 1. add: Multi-touch has been supported.
 
+### v1.1.1
+1. bixed bug:now support class
+```
+
+<script>
+new TouchFeedback(".abc");
+</script>
+
+```
 
 ## download
 
