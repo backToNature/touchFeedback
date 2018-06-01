@@ -1,6 +1,6 @@
 # touchFeedback.js - lightWeight JavaScript library
 
-![](http://0d077ef9e74d8.cdn.sohucs.com/pWc9ydG_gif)
+![](http://backtonature.github.io/project/touchFeedback/touchFeedback.gif)
 
 ``touchFeedback.js`` is a library for touch feedback in 
 mobile browsers;All functions are realized only in 2kb;
